@@ -4434,7 +4434,7 @@
     UniqueIndex.prototype.set = function (obj) {
       var fieldValue = obj[this.field];
       if (fieldValue !== null && typeof (fieldValue) !== 'undefined') {
-        if (this.keyMap[fieldValue]) {
+        if (this.keyMap[fieldValue] !== null && typeof this.keyMap[fieldValue] !== 'undefined') {
           throw new Error('Duplicate key for property ' + this.field + ': ' + fieldValue);
         } else {
           this.keyMap[fieldValue] = obj;
